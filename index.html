@@ -222,10 +222,15 @@ body {
     linear-gradient(180deg, #ffffff 0%, #fbf8f2 50%, #f3ece0 100%);
 }
 
-.hero-inner-centered {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-left-content {
+  text-align: left;
 }
 
 .hero-pill {
@@ -239,7 +244,7 @@ body {
   border-radius: 30px;
   font-size: 0.82rem;
   font-weight: 700;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(232, 99, 10, 0.08);
 }
 
@@ -249,12 +254,12 @@ body {
 }
 
 .hero-title {
-  font-size: 2.85rem;
+  font-size: 2.7rem;
   font-weight: 800;
-  line-height: 1.16;
+  line-height: 1.18;
   color: var(--steel-dark);
-  margin-bottom: 20px;
-  letter-spacing: -0.6px;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
 }
 
 .hero-title em {
@@ -263,20 +268,111 @@ body {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--steel-gray);
-  margin: 0 auto 32px auto;
-  max-width: 740px;
-  line-height: 1.68;
+  margin-bottom: 28px;
+  line-height: 1.66;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 38px;
+}
+
+/* Right side capabilities panel */
+.hero-capabilities-panel {
+  background-color: var(--white);
+  border: 1.5px solid var(--warm-orange-border);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-medium);
+}
+
+.hero-cap-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linen-border);
+}
+
+.hero-cap-head h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--steel-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-cap-head .cap-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  background-color: var(--light-orange);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.hero-cap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.hero-cap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hero-cap-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: var(--light-orange);
+  color: var(--primary-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hero-cap-text h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--steel-dark);
+  line-height: 1.25;
+}
+
+.hero-cap-text p {
+  font-size: 0.8rem;
+  color: var(--steel-light);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.hero-cap-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px dashed var(--linen-border);
+}
+
+.hero-badge-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--steel-dark);
+  background-color: var(--linen-bg);
+  border: 1px solid var(--linen-border);
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
 .btn-primary {
@@ -344,11 +440,12 @@ body {
 
 .hero-spec-list {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
   border-top: 1px solid rgba(226, 221, 212, 0.85);
   padding-top: 24px;
+  margin-top: 48px;
 }
 
 .spec-item {
@@ -1223,6 +1320,19 @@ body {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .hero-left-content {
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-spec-list {
+    justify-content: center;
+  }
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1337,55 +1447,132 @@ body {
   </div>
 </nav>
 
-<!-- HERO SECTION (BALANCED FULL-WIDTH WITH INDUSTRIAL GRADIENT) -->
+<!-- HERO SECTION (BALANCED 2-COLUMN FULL-WIDTH WITH INDUSTRIAL GRADIENT) -->
 <section class="hero-section" id="home">
   <div class="container">
-    <div class="hero-inner-centered">
-      <div class="hero-pill">
-        <svg class="icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-        <span>Precision Industrial Fabrication</span>
-        <span class="dot-sep">•</span>
-        <span>Bhosari MIDC Hub</span>
-      </div>
-
-      <h1 class="hero-title">
-        Industrial Sheds, MS &amp; SS Piping, Tanks &amp; <em>Heavy Steel Fabrication</em>
-      </h1>
-
-      <p class="hero-description">
-        Serving manufacturing plants, industrial warehouses, and commercial infrastructure across Pune and Maharashtra since 2010. Specializing in high-capacity PEB factory sheds, custom tanks, process piping, industrial chimneys, and loading/unloading structures.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">
-          <span>Request a Site Visit</span>
-          <svg class="icon-inline" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
+    <div class="hero-grid">
+      <!-- Left Column: Core Value & Call to Action -->
+      <div class="hero-left-content">
+        <div class="hero-pill">
+          <svg class="icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           </svg>
-        </a>
+          <span>Precision Industrial Fabrication</span>
+          <span class="dot-sep">•</span>
+          <span>Bhosari MIDC Hub</span>
+        </div>
+
+        <h1 class="hero-title">
+          Industrial Sheds, MS &amp; SS Piping, Tanks &amp; <em>Heavy Steel Fabrication</em>
+        </h1>
+
+        <p class="hero-description">
+          Serving manufacturing plants, industrial warehouses, and commercial infrastructure across Pune and Maharashtra since 2010. Specializing in high-capacity PEB factory sheds, custom tanks, process piping, industrial chimneys, and loading/unloading structures.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">
+            <span>Request a Site Visit</span>
+            <svg class="icon-inline" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <div class="hero-spec-list">
-        <div class="spec-item">
-          <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Mild Steel (MS) &amp; Stainless (SS)</span>
+      <!-- Right Column: Industrial Engineering Capabilities Panel -->
+      <div class="hero-capabilities-panel">
+        <div class="hero-cap-head">
+          <h3>
+            <svg class="icon-inline" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>Core Engineering Works</span>
+          </h3>
+          <span class="cap-tag">Since 2010</span>
         </div>
-        <div class="spec-item">
-          <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Small to Mega Sheds</span>
+
+        <div class="hero-cap-list">
+          <div class="hero-cap-item">
+            <div class="hero-cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"></path>
+              </svg>
+            </div>
+            <div class="hero-cap-text">
+              <h4>Industrial Sheds &amp; Warehouses</h4>
+              <p>Factory sheds, PEB, gantry crane rails &amp; heavy roof trussing</p>
+            </div>
+          </div>
+
+          <div class="hero-cap-item">
+            <div class="hero-cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <div class="hero-cap-text">
+              <h4>MS &amp; SS Process Piping</h4>
+              <p>High-pressure fluid lines, valve manifolds, steam &amp; utility networks</p>
+            </div>
+          </div>
+
+          <div class="hero-cap-item">
+            <div class="hero-cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div class="hero-cap-text">
+              <h4>Tanks, Vessels &amp; Reactors</h4>
+              <p>MS/SS bulk liquid storage, pressure vessels &amp; mixing tanks</p>
+            </div>
+          </div>
+
+          <div class="hero-cap-item">
+            <div class="hero-cap-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V8l4-4v18M14 22V4l4-2v20M2 22h20"></path>
+              </svg>
+            </div>
+            <div class="hero-cap-text">
+              <h4>Industrial Chimneys &amp; Platforms</h4>
+              <p>Self-supporting exhaust stacks, safety cages &amp; mezzanine floors</p>
+            </div>
+          </div>
         </div>
-        <div class="spec-item">
-          <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>High-Pressure Piping</span>
+
+        <div class="hero-cap-footer">
+          <span class="hero-badge-pill">15+ Years Experience</span>
+          <span class="hero-badge-pill">IS 2062 &amp; SS 304/316</span>
+          <span class="hero-badge-pill">Bhosari MIDC Base</span>
         </div>
-        <div class="spec-item">
-          <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>100% On-Time Delivery</span>
-        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Full-Width Spec Bar -->
+    <div class="hero-spec-list">
+      <div class="spec-item">
+        <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Mild Steel (MS) &amp; Stainless (SS)</span>
+      </div>
+      <div class="spec-item">
+        <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>Small to Mega Sheds</span>
+      </div>
+      <div class="spec-item">
+        <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>High-Pressure Piping</span>
+      </div>
+      <div class="spec-item">
+        <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>100% On-Time Delivery</span>
       </div>
     </div>
   </div>
@@ -1980,7 +2167,7 @@ function filterDirectPhotos(category, btnElement) {
   renderDirectGallery(category);
 }
 
-// ================= ALBUM MODAL FUNCTIONS =================
+// ================= ALBUM MODAL FUNCTIONS WITH MOBILE BACK-BUTTON SUPPORT =================
 function openAlbum(categoryKey) {
   const albumInfo = ALBUM_METADATA[categoryKey];
   const photos = ALL_PROJECT_PHOTOS.filter(p => p.category === categoryKey);
@@ -2010,11 +2197,23 @@ function openAlbum(categoryKey) {
 
   document.getElementById('album-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Push history state so mobile back button closes the album instead of exiting the site
+  if (!window.history.state || window.history.state.modal !== 'album') {
+    window.history.pushState({ modal: 'album' }, '');
+  }
 }
 
-function closeAlbumModal() {
-  document.getElementById('album-modal').classList.remove('open');
+function closeAlbumModal(fromPopstate = false) {
+  const modal = document.getElementById('album-modal');
+  if (!modal || !modal.classList.contains('open')) return;
+  modal.classList.remove('open');
   document.body.style.overflow = '';
+
+  // If closed via UI (X or backdrop), pop the pushed history state
+  if (!fromPopstate && window.history.state && window.history.state.modal === 'album') {
+    window.history.back();
+  }
 }
 
 function onModalBackdropClick(e) {
@@ -2023,13 +2222,18 @@ function onModalBackdropClick(e) {
   }
 }
 
-// ================= LIGHTBOX FUNCTIONS (FULL UNCROPPED VIEW) =================
+// ================= LIGHTBOX FUNCTIONS (FULL UNCROPPED VIEW WITH MOBILE BACK SUPPORT) =================
 function openLightboxFromList(list, index) {
   currentLightboxList = list;
   currentLightboxIndex = index;
   updateLightboxContent();
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Push history state so mobile back button closes the lightbox
+  if (!window.history.state || window.history.state.modal !== 'lightbox') {
+    window.history.pushState({ modal: 'lightbox' }, '');
+  }
 }
 
 function updateLightboxContent() {
@@ -2051,10 +2255,17 @@ function prevLightboxPhoto() {
   updateLightboxContent();
 }
 
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
+function closeLightbox(fromPopstate = false) {
+  const lb = document.getElementById('lightbox');
+  if (!lb || !lb.classList.contains('open')) return;
+  lb.classList.remove('open');
   if (!document.getElementById('album-modal').classList.contains('open')) {
     document.body.style.overflow = '';
+  }
+
+  // If closed via UI (X or backdrop), pop the pushed history state
+  if (!fromPopstate && window.history.state && window.history.state.modal === 'lightbox') {
+    window.history.back();
   }
 }
 
@@ -2063,6 +2274,21 @@ function onLightboxBackdropClick(e) {
     closeLightbox();
   }
 }
+
+// HANDLE MOBILE HARDWARE / GESTURE BACK BUTTON (popstate event)
+window.addEventListener('popstate', () => {
+  const lb = document.getElementById('lightbox');
+  const albumModal = document.getElementById('album-modal');
+
+  // If lightbox is open, close lightbox first
+  if (lb && lb.classList.contains('open')) {
+    closeLightbox(true);
+  } 
+  // Otherwise if album modal is open, close album modal
+  else if (albumModal && albumModal.classList.contains('open')) {
+    closeAlbumModal(true);
+  }
+});
 
 // KEYBOARD NAVIGATION (Esc to close, Arrow keys for lightbox)
 document.addEventListener('keydown', (e) => {
