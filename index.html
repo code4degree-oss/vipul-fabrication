@@ -1425,31 +1425,105 @@ body {
     transition: none !important;
   }
 }
+
+/* ================= CLIENTS LOGO MARQUEE ================= */
+.clients-section {
+  padding: 42px 0 46px 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--linen-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.clients-subhead {
+  font-size: 0.94rem;
+  color: var(--steel-gray);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+  mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo-card {
+  flex-shrink: 0;
+  width: 175px;
+  height: 82px;
+  background: #ffffff;
+  border: 1px solid var(--linen-border);
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  box-shadow: 0 2px 6px rgba(31, 35, 40, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--warm-orange-border);
+  box-shadow: 0 6px 16px rgba(31, 35, 40, 0.08);
+}
+
+.client-logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= FOOTER SERVICE AREA BADGE ================= */
+.footer-service-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #cfd4dc;
+  font-size: 0.88rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-top: 2px;
+}
+
+.footer-service-area svg {
+  color: var(--primary-orange);
+}
 </style>
 </head>
 <body>
-
-<!-- TOP UTILITY BAR (Hours & Service Areas - Contact Deduplicated) -->
-<header class="top-header">
-  <div class="container top-header-inner">
-    <div class="top-left-info">
-      <svg class="icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-        <circle cx="12" cy="10" r="3"></circle>
-      </svg>
-      <span>Indrayani Nagar, Bhosari, Pune</span>
-      <span style="margin: 0 6px; opacity: 0.4;">•</span>
-      <span class="badge-tag">Since 2010</span>
-    </div>
-    <div class="top-right-info">
-      <svg class="icon-inline" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polyline points="12 6 12 12 16 14"></polyline>
-      </svg>
-      <span>Mon–Sat: 8:00 AM – 8:00 PM | Serving Bhosari MIDC, PCMC, Chakan &amp; Talegaon</span>
-    </div>
-  </div>
-</header>
 
 <!-- MAIN STICKY NAVIGATION -->
 <nav class="main-nav">
@@ -1602,6 +1676,70 @@ body {
       <div class="spec-item">
         <svg class="icon-inline spec-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         <span>100% On-Time Delivery</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS / TRUSTED PARTNERS MARQUEE -->
+<section class="clients-section reveal">
+  <div class="container clients-header">
+    <span class="section-tag" style="font-size: 0.72rem; letter-spacing: 1px;">Trusted Industrial Partnerships</span>
+    <p class="clients-subhead">Trusted by leading manufacturing, automotive &amp; process engineering plants across Pune</p>
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <!-- Set 1 (8 Logos) -->
+      <div class="client-logo-card" title="Bilcare Research">
+        <img src="images/clients/bilcare.png" alt="Bilcare Research" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Continental">
+        <img src="images/clients/continental.png" alt="Continental" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="NORMA Group">
+        <img src="images/clients/norma-group.png" alt="NORMA Group" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Lotus Boilers &amp; Pressure Vessels">
+        <img src="images/clients/lotus-boilers.png" alt="Lotus Boilers &amp; Pressure Vessels" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Jamna Auto Industries (JAI)">
+        <img src="images/clients/jai-springs.png" alt="Jamna Auto Industries (JAI)" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="AVL">
+        <img src="images/clients/avl.png" alt="AVL" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Maple Biotech Pvt. Ltd.">
+        <img src="images/clients/maple-biotech.png" alt="Maple Biotech Pvt. Ltd." loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Shivam Enterprises">
+        <img src="images/clients/shivam.png" alt="Shivam Enterprises" loading="lazy">
+      </div>
+
+      <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+      <div class="client-logo-card" title="Bilcare Research" aria-hidden="true">
+        <img src="images/clients/bilcare.png" alt="Bilcare Research" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Continental" aria-hidden="true">
+        <img src="images/clients/continental.png" alt="Continental" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="NORMA Group" aria-hidden="true">
+        <img src="images/clients/norma-group.png" alt="NORMA Group" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Lotus Boilers &amp; Pressure Vessels" aria-hidden="true">
+        <img src="images/clients/lotus-boilers.png" alt="Lotus Boilers &amp; Pressure Vessels" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Jamna Auto Industries (JAI)" aria-hidden="true">
+        <img src="images/clients/jai-springs.png" alt="Jamna Auto Industries (JAI)" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="AVL" aria-hidden="true">
+        <img src="images/clients/avl.png" alt="AVL" loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Maple Biotech Pvt. Ltd." aria-hidden="true">
+        <img src="images/clients/maple-biotech.png" alt="Maple Biotech Pvt. Ltd." loading="lazy">
+      </div>
+      <div class="client-logo-card" title="Shivam Enterprises" aria-hidden="true">
+        <img src="images/clients/shivam.png" alt="Shivam Enterprises" loading="lazy">
       </div>
     </div>
   </div>
@@ -2022,6 +2160,16 @@ body {
   <div class="container footer-inner">
     <div class="footer-since-badge">SINCE 2010</div>
     <div style="font-weight: 700; font-size: 1.1rem; color: #ffffff;">Vipul Fabrication</div>
+    
+    <!-- SERVICE AREA BADGE (MOVED FROM TOP BAR) -->
+    <div class="footer-service-area">
+      <svg class="icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      <span>Serving Bhosari MIDC, PCMC, Chakan, Talegaon &amp; Pune Industrial Belt</span>
+    </div>
+
     <div class="footer-nav-links">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
@@ -2030,7 +2178,7 @@ body {
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-copy">
-      Indrayani Nagar, Bhosari, Pune &nbsp;•&nbsp; Contact: <a href="tel:7821029461" style="color: #ffaa75; text-decoration: none;">+91 78210 29461</a> &nbsp;•&nbsp; Since 2010
+      Workshop: Indrayani Nagar, Bhosari, Pune &nbsp;•&nbsp; Contact: <a href="tel:7821029461" style="color: #ffaa75; text-decoration: none;">+91 78210 29461</a> &nbsp;•&nbsp; Since 2010
     </div>
   </div>
 </footer>
