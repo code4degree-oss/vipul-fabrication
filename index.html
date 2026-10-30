@@ -1431,6 +1431,16 @@
         grid-template-columns: 1fr;
       }
 
+      .clients-grid-quad {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .client-grid-card {
+        height: 80px;
+        padding: 10px 14px;
+      }
+
       .albums-grid {
         grid-template-columns: 1fr;
       }
@@ -1506,79 +1516,39 @@
       }
     }
 
-    /* ================= CLIENTS LOGO MARQUEE ================= */
-    .clients-section {
-      padding: 42px 0 46px 0;
+    /* ================= CLIENTS 4x2 QUADRILATERAL GRID ================= */
+    .clients-grid-section {
       background-color: var(--white);
-      border-bottom: 1px solid var(--linen-border);
-      overflow: hidden;
-      position: relative;
+      border-top: 1px solid var(--linen-border);
+      padding: 72px 0;
     }
 
-    .clients-header {
-      text-align: center;
-      margin-bottom: 24px;
+    .clients-grid-quad {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .clients-subhead {
-      font-size: 0.94rem;
-      color: var(--steel-gray);
-      font-weight: 600;
-      margin-top: 6px;
-    }
-
-    .marquee-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      padding: 8px 0;
-      mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 22px;
-      width: max-content;
-      animation: marqueeScroll 28s linear infinite;
-    }
-
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes marqueeScroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .client-logo-card {
-      flex-shrink: 0;
-      width: 175px;
-      height: 82px;
+    .client-grid-card {
       background: #ffffff;
       border: 1px solid var(--linen-border);
       border-radius: var(--radius-md);
-      padding: 10px 18px;
-      box-shadow: 0 2px 6px rgba(31, 35, 40, 0.04);
+      padding: 16px 22px;
+      height: 96px;
+      box-shadow: var(--shadow-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .client-logo-card:hover {
-      transform: translateY(-3px);
+    .client-grid-card:hover {
+      transform: translateY(-4px);
       border-color: var(--warm-orange-border);
-      box-shadow: 0 6px 16px rgba(31, 35, 40, 0.08);
+      box-shadow: var(--shadow-medium);
     }
 
-    .client-logo-card img {
+    .client-grid-card img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
@@ -1820,70 +1790,7 @@
     </div>
   </section>
 
-  <!-- CLIENTS / TRUSTED PARTNERS MARQUEE -->
-  <section class="clients-section reveal">
-    <div class="container clients-header">
-      <span class="section-tag" style="font-size: 0.72rem; letter-spacing: 1px;">Trusted Industrial Partnerships</span>
-      <p class="clients-subhead">Trusted by leading manufacturing, automotive &amp; process engineering plants across
-        Pune</p>
-    </div>
 
-    <div class="marquee-container">
-      <div class="marquee-track">
-        <!-- Set 1 (8 Logos) -->
-        <div class="client-logo-card" title="Bilcare Research">
-          <img src="images/clients/bilcare.png" alt="Bilcare Research" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Continental">
-          <img src="images/clients/continental.png" alt="Continental" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="NORMA Group">
-          <img src="images/clients/norma-group.png" alt="NORMA Group" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Lotus Boilers &amp; Pressure Vessels">
-          <img src="images/clients/lotus-boilers.png" alt="Lotus Boilers &amp; Pressure Vessels" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Jamna Auto Industries (JAI)">
-          <img src="images/clients/jai-springs.png" alt="Jamna Auto Industries (JAI)" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="AVL">
-          <img src="images/clients/avl.png" alt="AVL" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Maple Biotech Pvt. Ltd.">
-          <img src="images/clients/maple-biotech.png" alt="Maple Biotech Pvt. Ltd." loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Shivam Enterprises">
-          <img src="images/clients/shivam.png" alt="Shivam Enterprises" loading="lazy">
-        </div>
-
-        <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
-        <div class="client-logo-card" title="Bilcare Research" aria-hidden="true">
-          <img src="images/clients/bilcare.png" alt="Bilcare Research" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Continental" aria-hidden="true">
-          <img src="images/clients/continental.png" alt="Continental" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="NORMA Group" aria-hidden="true">
-          <img src="images/clients/norma-group.png" alt="NORMA Group" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Lotus Boilers &amp; Pressure Vessels" aria-hidden="true">
-          <img src="images/clients/lotus-boilers.png" alt="Lotus Boilers &amp; Pressure Vessels" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Jamna Auto Industries (JAI)" aria-hidden="true">
-          <img src="images/clients/jai-springs.png" alt="Jamna Auto Industries (JAI)" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="AVL" aria-hidden="true">
-          <img src="images/clients/avl.png" alt="AVL" loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Maple Biotech Pvt. Ltd." aria-hidden="true">
-          <img src="images/clients/maple-biotech.png" alt="Maple Biotech Pvt. Ltd." loading="lazy">
-        </div>
-        <div class="client-logo-card" title="Shivam Enterprises" aria-hidden="true">
-          <img src="images/clients/shivam.png" alt="Shivam Enterprises" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- SERVICES (BALANCED 3-COLUMN DESKTOP GRID) -->
   <section class="section" id="services">
@@ -2183,6 +2090,47 @@
         <!-- Generated dynamically by JavaScript to keep thumbnail dimensions crisp and uniform -->
       </div>
 
+    </div>
+  </section>
+
+  <!-- CLIENTS QUADRILATERAL SECTION (BELOW OUR WORK) -->
+  <section class="section clients-grid-section" id="clients">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Client Partnerships</span>
+        <h2 class="section-title">Trusted By Industrial Leaders</h2>
+        <p class="section-desc">Delivering precision fabrication, piping, and heavy structural engineering to leading manufacturing, biotech, and automotive plants across Pune.</p>
+      </div>
+
+      <div class="clients-grid-quad">
+        <!-- Row 1 -->
+        <div class="client-grid-card reveal stagger-1" title="Bilcare Research">
+          <img src="images/clients/bilcare.png" alt="Bilcare Research" loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-2" title="Continental">
+          <img src="images/clients/continental.png" alt="Continental" loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-3" title="NORMA Group">
+          <img src="images/clients/norma-group.png" alt="NORMA Group" loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-4" title="Lotus Boilers &amp; Pressure Vessels">
+          <img src="images/clients/lotus-boilers.png" alt="Lotus Boilers &amp; Pressure Vessels" loading="lazy">
+        </div>
+
+        <!-- Row 2 -->
+        <div class="client-grid-card reveal stagger-1" title="Jamna Auto Industries (JAI)">
+          <img src="images/clients/jai-springs.png" alt="Jamna Auto Industries (JAI)" loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-2" title="AVL">
+          <img src="images/clients/avl.png" alt="AVL" loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-3" title="Maple Biotech Pvt. Ltd.">
+          <img src="images/clients/maple-biotech.png" alt="Maple Biotech Pvt. Ltd." loading="lazy">
+        </div>
+        <div class="client-grid-card reveal stagger-4" title="Shivam Enterprises">
+          <img src="images/clients/shivam.png" alt="Shivam Enterprises" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
