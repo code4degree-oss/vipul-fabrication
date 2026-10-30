@@ -9,10 +9,10 @@
     content="Vipul Fabrication - Industrial Sheds, MS &amp; SS Piping, Tanks, Chimneys, Loading Platforms &amp; Heavy Fabrication in Indrayani Nagar, Bhosari, Pune. Since 2010.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="images/brand/vipul-logo.png">
-  <!-- Google Fonts for Authentic Industrial Stencil Typography -->
+  <!-- Google Fonts for Authentic Industrial Stencil Typography & Global Modern UI -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700;800&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Saira+Stencil+One&display=swap" rel="stylesheet">
   <style>
     /* ========================================================
    VIPUL FABRICATION - CLEAN INDUSTRIAL REFACTORED STYLING
@@ -55,7 +55,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text-main);
       background-color: var(--linen-bg);
       line-height: 1.6;
@@ -159,11 +159,6 @@
       transform: scale(1.05);
     }
 
-    .brand-text-block {
-      display: flex;
-      flex-direction: column;
-    }
-
     .brand-title {
       font-family: 'Saira Stencil One', 'Chakra Petch', sans-serif;
       font-size: 1.38rem;
@@ -176,15 +171,6 @@
 
     .brand-title span {
       color: var(--primary-orange);
-    }
-
-    .brand-subtitle {
-      font-size: 0.72rem;
-      color: var(--steel-light);
-      font-weight: 600;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      margin-top: 2px;
     }
 
     .nav-menu {
@@ -1423,10 +1409,6 @@
         font-size: 1.18rem;
       }
 
-      .brand-subtitle {
-        font-size: 0.65rem;
-      }
-
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -1610,10 +1592,7 @@
     <div class="container nav-row">
       <a href="#home" class="brand-box">
         <img src="images/brand/vipul-logo.png" alt="Vipul Fabrication Logo" class="brand-logo-img">
-        <div class="brand-text-block">
-          <div class="brand-title">VIPUL <span>FABRICATION</span></div>
-          <div class="brand-subtitle">MS &amp; SS Industrial Engineering • Bhosari</div>
-        </div>
+        <div class="brand-title">VIPUL <span>FABRICATION</span></div>
       </a>
       <button class="mobile-toggle" onclick="toggleNav()" aria-label="Toggle navigation">☰ Menu</button>
       <ul class="nav-menu" id="nav-menu">
