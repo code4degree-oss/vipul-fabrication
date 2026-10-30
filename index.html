@@ -2011,7 +2011,7 @@
         <div class="album-stack-item reveal stagger-1" onclick="openAlbum('sheds')">
           <div class="album-top-card">
             <div class="album-cover-frame">
-              <img src="images/sheds/warehouse-interior-1.png" alt="Industrial Sheds Album Cover" loading="lazy">
+              <img src="images/sheds/warehouse-interior-1.webp" alt="Industrial Sheds Album Cover" loading="lazy" decoding="async">
               <div class="album-badge-count">8 Photos</div>
             </div>
             <div class="album-body">
@@ -2034,7 +2034,7 @@
         <div class="album-stack-item reveal stagger-2" onclick="openAlbum('piping')">
           <div class="album-top-card">
             <div class="album-cover-frame">
-              <img src="images/piping/fluid-system.png" alt="MS and SS Piping Album Cover" loading="lazy">
+              <img src="images/piping/fluid-system.webp" alt="MS and SS Piping Album Cover" loading="lazy" decoding="async">
               <div class="album-badge-count">11 Photos</div>
             </div>
             <div class="album-body">
@@ -2057,7 +2057,7 @@
         <div class="album-stack-item reveal stagger-3" onclick="openAlbum('tanks')">
           <div class="album-top-card">
             <div class="album-cover-frame">
-              <img src="images/tanks/vessel-reactor.png" alt="Tanks and Vessels Album Cover" loading="lazy">
+              <img src="images/tanks/vessel-reactor.webp" alt="Tanks and Vessels Album Cover" loading="lazy" decoding="async">
               <div class="album-badge-count">4 Photos</div>
             </div>
             <div class="album-body">
@@ -2080,8 +2080,8 @@
         <div class="album-stack-item reveal stagger-4" onclick="openAlbum('structures')">
           <div class="album-top-card">
             <div class="album-cover-frame">
-              <img src="images/structures/pavilion-canopy.png" alt="Structures and Platforms Album Cover"
-                loading="lazy">
+              <img src="images/structures/pavilion-canopy.webp" alt="Structures and Platforms Album Cover"
+                loading="lazy" decoding="async">
               <div class="album-badge-count">5 Photos</div>
             </div>
             <div class="album-body">
@@ -2104,7 +2104,7 @@
         <div class="album-stack-item reveal stagger-5" onclick="openAlbum('others')">
           <div class="album-top-card">
             <div class="album-cover-frame">
-              <img src="images/others/chimney-blue-sky.png" alt="Chimneys and Safety Cages Album Cover" loading="lazy">
+              <img src="images/others/chimney-blue-sky.webp" alt="Chimneys and Safety Cages Album Cover" loading="lazy" decoding="async">
               <div class="album-badge-count">5 Photos</div>
             </div>
             <div class="album-body">
@@ -2487,50 +2487,50 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // ================= DATA REPOSITORY (ALL 33 IMAGES PRESERVED) =================
+    // ================= DATA REPOSITORY (ALL 33 IMAGES PRESERVED IN HIGH-PERFORMANCE WEBP) =================
     const ALL_PROJECT_PHOTOS = [
       // --- SHEDS (8 Photos) ---
-      { id: 1, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-interior-1.png', title: 'Industrial Warehouse Interior with Overhead Crane Rail' },
-      { id: 2, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-interior-2.png', title: 'High-Ceiling Shed Interior with Precision Truss Framework' },
-      { id: 3, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/shed-interior.png', title: 'Sunlit Industrial Shed Under Erection' },
-      { id: 4, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/clean-workshop-overhead-crane.png', title: 'Clean Industrial Workshop with Overhead Crane Setup' },
-      { id: 5, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-overhead-crane.png', title: 'Industrial Warehouse Crane & Structural Columns' },
-      { id: 6, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-corridor-skylights.png', title: 'Warehouse Corridor with Natural Skylights' },
-      { id: 7, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-collage.jpg', title: 'Steel Warehouse Assembly & Multi-Stage Fabrication' },
-      { id: 8, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/fabrication-collage.jpg', title: 'Factory Floor Partition & Mezzanine Frame Setup' },
+      { id: 1, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-interior-1.webp', title: 'Industrial Warehouse Interior with Overhead Crane Rail' },
+      { id: 2, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-interior-2.webp', title: 'High-Ceiling Shed Interior with Precision Truss Framework' },
+      { id: 3, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/shed-interior.webp', title: 'Sunlit Industrial Shed Under Erection' },
+      { id: 4, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/clean-workshop-overhead-crane.webp', title: 'Clean Industrial Workshop with Overhead Crane Setup' },
+      { id: 5, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-overhead-crane.webp', title: 'Industrial Warehouse Crane & Structural Columns' },
+      { id: 6, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-corridor-skylights.webp', title: 'Warehouse Corridor with Natural Skylights' },
+      { id: 7, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/warehouse-collage.webp', title: 'Steel Warehouse Assembly & Multi-Stage Fabrication' },
+      { id: 8, category: 'sheds', categoryName: 'Industrial Sheds', src: 'images/sheds/fabrication-collage.webp', title: 'Factory Floor Partition & Mezzanine Frame Setup' },
 
       // --- PIPING (11 Photos) ---
-      { id: 9, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/fluid-system.png', title: 'Industrial Fluid Control & Pump Manifold System' },
-      { id: 10, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/pumping-assembly-comparison.png', title: 'Fabrication to Pumping Assembly Comparison' },
-      { id: 11, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-valvework-montage.png', title: 'Industrial Piping, Pressure Gauges & Valvework' },
-      { id: 12, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/tanks-piping-corridor.png', title: 'Chemical Plant Piping & Tank Interconnection' },
-      { id: 13, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-manifold-valves.jpg', title: 'High-Pressure Header with Butterfly Control Valves' },
-      { id: 14, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/welding-pipe-ladder-work.jpg', title: 'Welder Fabricating Industrial Pipeline & Safety Access' },
-      { id: 15, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/pipeline-collage.jpg', title: 'Factory Utility & Overhead Pipeline Montage' },
-      { id: 16, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-1.jpeg', title: 'Stainless Steel Utility Pipe Branching with Valves' },
-      { id: 17, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-2.jpg', title: 'Cleanroom SS Process Pipeline Installation' },
-      { id: 18, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-3.jpg', title: 'Industrial Coolant & Steam Piping Network' },
-      { id: 19, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/rooftop-pipe-rack.png', title: 'Weathered Rooftop Insulated Pipe Rack' },
+      { id: 9, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/fluid-system.webp', title: 'Industrial Fluid Control & Pump Manifold System' },
+      { id: 10, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/pumping-assembly-comparison.webp', title: 'Fabrication to Pumping Assembly Comparison' },
+      { id: 11, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-valvework-montage.webp', title: 'Industrial Piping, Pressure Gauges & Valvework' },
+      { id: 12, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/tanks-piping-corridor.webp', title: 'Chemical Plant Piping & Tank Interconnection' },
+      { id: 13, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-manifold-valves.webp', title: 'High-Pressure Header with Butterfly Control Valves' },
+      { id: 14, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/welding-pipe-ladder-work.webp', title: 'Welder Fabricating Industrial Pipeline & Safety Access' },
+      { id: 15, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/pipeline-collage.webp', title: 'Factory Utility & Overhead Pipeline Montage' },
+      { id: 16, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-1.webp', title: 'Stainless Steel Utility Pipe Branching with Valves' },
+      { id: 17, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-2.webp', title: 'Cleanroom SS Process Pipeline Installation' },
+      { id: 18, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/piping-work-3.webp', title: 'Industrial Coolant & Steam Piping Network' },
+      { id: 19, category: 'piping', categoryName: 'MS & SS Piping', src: 'images/piping/rooftop-pipe-rack.webp', title: 'Weathered Rooftop Insulated Pipe Rack' },
 
       // --- TANKS (4 Photos) ---
-      { id: 20, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/vessel-reactor.png', title: 'Industrial Pressure Vessel & Agitator Reactor Unit' },
-      { id: 21, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/tank-fabrication-showcase.png', title: 'Heavy Mild Steel Storage Tank Fabrication Showcase' },
-      { id: 22, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/horizontal-storage-tank.jpg', title: 'Bulk Liquid Storage Tank with Process Connection' },
-      { id: 23, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/plant-reactors.png', title: 'Multi-Level Reactor Framework, Stairways & Tanks' },
+      { id: 20, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/vessel-reactor.webp', title: 'Industrial Pressure Vessel & Agitator Reactor Unit' },
+      { id: 21, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/tank-fabrication-showcase.webp', title: 'Heavy Mild Steel Storage Tank Fabrication Showcase' },
+      { id: 22, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/horizontal-storage-tank.webp', title: 'Bulk Liquid Storage Tank with Process Connection' },
+      { id: 23, category: 'tanks', categoryName: 'Tanks & Vessels', src: 'images/tanks/plant-reactors.webp', title: 'Multi-Level Reactor Framework, Stairways & Tanks' },
 
       // --- STRUCTURES & PLATFORMS (5 Photos) ---
-      { id: 24, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/pavilion-canopy.png', title: 'Modern Steel Pavilion with Designer Perforated Canopy' },
-      { id: 25, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/modular-kiosks.png', title: 'Modular Outdoor Food/Commercial Kiosks in Construction' },
-      { id: 26, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/rooftop-frame.png', title: 'Rooftop Pyramid Steel Frame Under Construction' },
-      { id: 27, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/pergola-worksite.png', title: 'Heavy Pergola Structure Fabricated On-Site' },
-      { id: 28, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/roof-tile-work.png', title: 'Decorative Steel Roof Truss & Clay Tile Installation' },
+      { id: 24, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/pavilion-canopy.webp', title: 'Modern Steel Pavilion with Designer Perforated Canopy' },
+      { id: 25, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/modular-kiosks.webp', title: 'Modular Outdoor Food/Commercial Kiosks in Construction' },
+      { id: 26, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/rooftop-frame.webp', title: 'Rooftop Pyramid Steel Frame Under Construction' },
+      { id: 27, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/pergola-worksite.webp', title: 'Heavy Pergola Structure Fabricated On-Site' },
+      { id: 28, category: 'structures', categoryName: 'Structures & Platforms', src: 'images/structures/roof-tile-work.webp', title: 'Decorative Steel Roof Truss & Clay Tile Installation' },
 
       // --- CHIMNEYS & OTHERS (5 Photos) ---
-      { id: 29, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/chimney-blue-sky.png', title: 'Tall Industrial Exhaust Chimney Tower with Ladder' },
-      { id: 30, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/chimney-steelwork-fabrication.png', title: 'Ground Assembly of Chimney Structural Ladder Framework' },
-      { id: 31, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/safety-cage-warehouse.png', title: 'Heavy Industrial Yellow Safety Enclosure Cage' },
-      { id: 32, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/factory-line.png', title: 'Automated Conveyor Safety Enclosure & Mesh Barriers' },
-      { id: 33, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/tower-scaffold.png', title: 'Workers Erecting Chimney Tower with Safety Gear' }
+      { id: 29, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/chimney-blue-sky.webp', title: 'Tall Industrial Exhaust Chimney Tower with Ladder' },
+      { id: 30, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/chimney-steelwork-fabrication.webp', title: 'Ground Assembly of Chimney Structural Ladder Framework' },
+      { id: 31, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/safety-cage-warehouse.webp', title: 'Heavy Industrial Yellow Safety Enclosure Cage' },
+      { id: 32, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/factory-line.webp', title: 'Automated Conveyor Safety Enclosure & Mesh Barriers' },
+      { id: 33, category: 'others', categoryName: 'Chimneys & Safety Works', src: 'images/others/tower-scaffold.webp', title: 'Workers Erecting Chimney Tower with Safety Gear' }
     ];
 
     const ALBUM_METADATA = {
@@ -2585,7 +2585,7 @@
 
         card.innerHTML = `
       <div class="photo-frame-complete">
-        <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+        <img src="${photo.src}" alt="${photo.title}" loading="lazy" decoding="async">
       </div>
       <div class="photo-caption-bar">
         <div class="photo-title" title="${photo.title}">${photo.title}</div>
@@ -2621,7 +2621,7 @@
 
         card.innerHTML = `
       <div class="photo-frame-complete">
-        <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+        <img src="${photo.src}" alt="${photo.title}" loading="lazy" decoding="async">
       </div>
       <div class="photo-caption-bar">
         <div class="photo-title" title="${photo.title}">${photo.title}</div>
